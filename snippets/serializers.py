@@ -5,4 +5,5 @@ from snippets.models import Snippet, LANGUAGE_CHOICES, STYLE_CHOICES
 class SnippetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Snippet
-        field = ('id', 'title', 'code', 'linenos', 'language', 'style')  # fields from the snippets.models Snippet
+        fields = ('id', 'title', 'code', 'linenos', 'language', 'style')
+        
