@@ -4,9 +4,7 @@ from rest_framework import mixins
 from rest_framework import generics
 
 
-class SnippetList(mixins.ListModelMixin,
-                  mixins.CreateModelMixin,
-                  generics.GenericAPIView):
+class SnippetList(generics.ListCreateAPIView):
     """
     List all snippets, or create a new snippet.
     """
@@ -20,10 +18,7 @@ class SnippetList(mixins.ListModelMixin,
         return self.create(request, *args, **kwargs)
 
 
-class SnippetDetail(mixins.RetrieveModelMixin,
-                    mixins.UpdateModelMixin,
-                    mixins.DestroyModelMixin,
-                    generics.GenericAPIView):
+class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve, update or delete a snippet instance.
     """
